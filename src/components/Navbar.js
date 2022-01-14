@@ -1,10 +1,13 @@
 import {Container, Form, Nav, Navbar, NavDropdown} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
+import {useNavigate} from 'react-router-dom';
 
 
 const CustomNavBar = ({searchText, setSearchText}) => {
+    const navigate = useNavigate()
     const updateSearchText = (e) => {
-        console.log(e.target.value)
+        navigate('/search')
+        setSearchText(e.target.value)
     }
     return (
         <Navbar bg="light" expand="lg" sticky="top">
@@ -25,7 +28,7 @@ const CustomNavBar = ({searchText, setSearchText}) => {
                                     type="text"
                                     placeholder="Search..."
                                     aria-label="Search"
-                                    // value={searchText}
+                                    value={searchText}
                                     onChange={updateSearchText}
                                 />
                             </Form.Group>
