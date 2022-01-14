@@ -1,13 +1,10 @@
 import Hero from './Hero';
 import {Button, Card, Col, Container, Row} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
-
-// tmdb api key: b1d8c9d11e81f0217735d4ad44a21c12
-// url: https://image.tmdb.org/t/p/w500/wigZBAmNrIhxp2FNGOROUAeHvdh.jpg
 
 const MovieCard = ({movie}) => {
     const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    console.log(movie.homepage,"is the homepage")
     return (
         <Col lg={3} md={3} className="col-2 my-4">
             <Card style={{width: '18rem'}}>
@@ -17,7 +14,7 @@ const MovieCard = ({movie}) => {
                     <Card.Text>
                         {movie.overview}
                     </Card.Text>
-                    <Button as="a" variant="primary" href={movie.homepage}>Show Details</Button>
+                    <Button href={`/movies/${movie.id}`} variant="primary" as="a">Show</Button>
                 </Card.Body>
             </Card>
         </Col>
