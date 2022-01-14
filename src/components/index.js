@@ -1,0 +1,5 @@
+export { default as Home} from './Home'
+export { default as CustomNavBar } from './Navbar'
+export { default as AboutView } from './About'
+export { default as Hero } from './Hero'
+export { default as SearchView } from './SearchView'
